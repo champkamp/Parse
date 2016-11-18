@@ -45,13 +45,18 @@ def locator(file, word):
         line_num += 1
         if line.find(word) >= 0:
             print("line number: " + str(line_num))
+    inFile.close()
 
 locator('textFile.txt', "Writing")
 
+def textFileReverse(file):
+    inFile = open(file)
+    contents = inFile.readlines()
+    for line in reversed(contents):
+        print(line.rstrip())
+    inFile.close()
 
-
-
-
+textFileReverse("textFile.txt")
 
 
 
