@@ -5,12 +5,10 @@ def letterCount( file, letter ):
     contents = inFile.read()
 
     for character in contents:
-        if character == "a":
+        if character == letter:
             count += 1
     inFile.close()
     print( "Number of occurrences: " + str(count) )
-
-letterCount( "textFile.txt", "a" )
 
 def largestWord( file ):
     inFile = open( file )
@@ -36,7 +34,6 @@ def largestWord( file ):
     print( "Length of the largest word: " + str(maxLength) )
     print( "Largest word: " + biggestWord )
     print("Occurrences: " + str(count) )
-largestWord( "textFile.txt" )
 
 def locator(file, word):
     line_num = 0
@@ -47,8 +44,6 @@ def locator(file, word):
             print("line number: " + str(line_num))
     inFile.close()
 
-locator('textFile.txt', "Writing")
-
 def textFileReverse(file):
     inFile = open(file)
     contents = inFile.readlines()
@@ -56,7 +51,12 @@ def textFileReverse(file):
         print(line.rstrip())
     inFile.close()
 
-textFileReverse("textFile.txt")
+if __name__ == "__main__":
+
+    textFileReverse("textFile.txt")
+    letterCount("textFile.txt", "a")
+    largestWord("textFile.txt")
+    locator('textFile.txt', "Writing")
 
 
 
